@@ -38,7 +38,11 @@ public class CommandIntaker {
             Double parsedNumber = null;
             Operator newOperator = null;
             try {
-                parsedNumber = Double.parseDouble(word);
+                if(word.equals("pi")) {
+                    parsedNumber = Math.PI;
+                } else {
+                    parsedNumber = Double.parseDouble(word);
+                }
             } catch (NumberFormatException e) {
                 newOperator = getOperator(word);
             }
@@ -51,10 +55,6 @@ public class CommandIntaker {
         return true;
     }
 
-    /** 
-     * @param word
-     * @return Operator
-     */
     private Operator getOperator(String word) {
         Operator newOperator = null;
         switch(word) {
