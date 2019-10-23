@@ -54,6 +54,9 @@ public class Calculator {
             case REMAINDER:
                 remainder(secondNumber);
                 break;
+            case LOGARITHM:
+                log(secondNumber);
+                break;
         }
     }
 
@@ -126,4 +129,8 @@ public class Calculator {
         currentNumber %= number;
     }
     
+    private void log(double number) {
+        currentNumber = Math.log(currentNumber) / Math.log(number);
+    }
+
 }

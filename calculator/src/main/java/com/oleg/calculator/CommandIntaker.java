@@ -90,6 +90,9 @@ public class CommandIntaker {
             case "%":
                 newOperator = Operator.REMAINDER;
                 break;
+            case "log":
+                newOperator = Operator.LOGARITHM;
+                break;
         }
         return newOperator;
     }
@@ -114,7 +117,9 @@ public class CommandIntaker {
                 } else {
                     if(parsedNumber == 0 && lastOperator.equals(Operator.DIVIDE)) {
                         System.out.println("Division by 0 ignored.");
-                    } else {
+                    } else if(parsedNumber <= 0 && lastOperator.equals(Operator.LOGARITHM)) {
+                        System.out.println("Logarithm with negative or 0 base ignored.");
+                    } {
                         calc.processCommand(lastOperator, parsedNumber);
                     }
                 }

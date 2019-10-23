@@ -7,5 +7,6 @@ public enum Operator {
     DIVIDE,
     POWER,
     EQUAL,
-    REMAINDER
+    REMAINDER,
+    LOGARITHM
 }
