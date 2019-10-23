@@ -76,6 +76,9 @@ public class CommandIntaker {
             case "=":
                 newOperator = Operator.EQUAL;
                 break;
+            case "%":
+                newOperator = Operator.REMAINDER;
+                break;
         }
         return newOperator;
     }

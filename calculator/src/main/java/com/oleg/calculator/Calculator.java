@@ -50,6 +50,9 @@ public class Calculator {
             case EQUAL:
                 currentNumber = secondNumber;
                 break;
+            case REMAINDER:
+                remainder(secondNumber);
+                break;
         }
     }
 
@@ -89,6 +92,10 @@ public class Calculator {
 
     private void power(double number) {
         currentNumber = Math.pow(currentNumber, number);
+    }
+    
+    private void remainder(double number) {
+        currentNumber %= number;
     }
     
 }
