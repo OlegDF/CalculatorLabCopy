@@ -49,8 +49,9 @@ public class CommandIntaker {
             Double parsedNumber = null;
             Operator newOperator = null;
             try {
-                if(word.equals("pi")) {
-                    parsedNumber = Math.PI;
+                Double constant = detectConstant(word);
+                if(constant != null) {
+                    parsedNumber = constant;
                 } else {
                     parsedNumber = Double.parseDouble(word);
                 }
@@ -64,6 +65,15 @@ public class CommandIntaker {
             }
         }
         return true;
+    }
+
+    private Double detectConstant(String word) {
+        if(word.equals("pi")) {
+            return Math.PI;
+        } else if(word.equals("e")) {
+            return Math.E;
+        }
+        return null;
     }
 
     private Operator getOperator(String word) {
