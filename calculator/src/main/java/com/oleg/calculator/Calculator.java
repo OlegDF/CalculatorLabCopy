@@ -3,6 +3,7 @@ package com.oleg.calculator;
 public class Calculator {
 
     private double currentNumber;
+    private Double mem1, mem2;
     private boolean numberSet = false;
 
     /** 
@@ -11,9 +12,10 @@ public class Calculator {
      */
     public Calculator() {
         currentNumber = 0;
+        mem1 = null;
+        mem2 = null;
     }
 
-    
     /** 
      * Starts a new calculation from a specified number
      * @param firstNumber - initial value
@@ -23,7 +25,6 @@ public class Calculator {
         numberSet = true;
     }
 
-    
     /** 
      * Takes a command and performs an operation based on it.
      * The operation can be addition, subtraction, multiplication, division, power, or resetting the current number to a new one
@@ -65,6 +66,33 @@ public class Calculator {
         return currentNumber;
     }
 
+        /** 
+     * Retrieves the current number from the first memory slot, or retrieves it if it's there
+     */
+    public void mem1() {
+        if(mem1 != null) {
+            currentNumber = mem1;
+        } else {
+            mem1 = currentNumber;
+        }
+    }
+
+    /** 
+     * Retrieves the current number from the second memory slot, or retrieves it if it's there
+     */
+    public void mem2() {
+        if(mem2 != null) {
+            currentNumber = mem2;
+        } else {
+            mem2 = currentNumber;
+        }
+    }
+
+    public void memClear() {
+        System.out.println(mem1 + " " + mem2);
+        mem1 = null;
+        mem2 = null;
+    }
     
     /** 
      * Tells whether a calculation has started or not

@@ -34,6 +34,17 @@ public class CommandIntaker {
         for(String word: words) {
             if(word.equals("stop")) {
                 return false;
+            } else if(word.equals("mem1")) {
+                calc.mem1();
+                lastInputIsANumber = true;
+                continue;
+            } else if(word.equals("mem2")) {
+                calc.mem2();
+                lastInputIsANumber = true;
+                continue;
+            } else if(word.equals("memclear")) {
+                calc.memClear();
+                continue;
             }
             Double parsedNumber = null;
             Operator newOperator = null;
