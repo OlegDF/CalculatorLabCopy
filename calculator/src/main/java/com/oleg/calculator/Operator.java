@@ -6,5 +6,6 @@ public enum Operator {
     MULTIPLY,
     DIVIDE,
     POWER,
-    EQUAL
+    EQUAL,
+    REMAINDER
 }
